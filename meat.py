@@ -18,6 +18,8 @@ meatOrder = {}
 # separate and properly weight each choice
 for index, row in df.iterrows():
 	# Check if there is a comma in the choice, which will indicate multiple choices
+	# Note: if a given row['entree'] has a single item, running .split(', ') will just
+	# return that item
 	choices = row['entree'].split(', ')
 	numChoices = len(choices)
 	
@@ -27,6 +29,10 @@ for index, row in df.iterrows():
 			meatOrder[choice] += (1/float(numChoices))
 		else: 
 			meatOrder[choice] = (1/float(numChoices))
+
+# Round all the values in meatOrder to two-point precision decimals
+for meat in meatOrder:
+	meatOrder[meat] = float("{0:.1f}".format(meatOrder[meat]))
 
 
 
