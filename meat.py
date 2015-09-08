@@ -33,9 +33,3 @@ for index, row in df.iterrows():
 # Round all the values in meatOrder to two-point precision decimals
 for meat in meatOrder:
 	meatOrder[meat] = float("{0:.1f}".format(meatOrder[meat]))
-
-
-
-
-
-		
