@@ -22,13 +22,14 @@ for index, row in df.iterrows():
 	# return that item
 	choices = row['entree'].split(', ')
 	numChoices = len(choices)
+	partySize = int(row['partySize'])
 	
 	# Loop through choices and add to dictionary
 	for choice in choices:
 		if meatOrder.has_key(choice):
-			meatOrder[choice] += (1/float(numChoices))
+			meatOrder[choice] += (1/float(numChoices)) * partySize
 		else: 
-			meatOrder[choice] = (1/float(numChoices))
+			meatOrder[choice] = (1/float(numChoices)) * partySize
 
 # Round all the values in meatOrder to two-point precision decimals
 for meat in meatOrder:
