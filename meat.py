@@ -37,5 +37,4 @@ for meat in meats:
 	print meat + ': ' + str(meats[meat])
 
 # Print the meats breakdown and a sum of all meats
-
 print "TOTAL: " + str(sum(meats.values()))
