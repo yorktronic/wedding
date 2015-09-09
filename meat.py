@@ -9,7 +9,7 @@
 import pandas as pd
 
 # Import the csv as a pandas dataframe
-df = pd.read_csv('./db/meat.csv')
+df = pd.read_csv('./db/attendees.csv')
 
 # Create a dictionary containing every entree item so we can store the counts
 meatOrder = {}
