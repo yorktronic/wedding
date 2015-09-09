@@ -12,7 +12,7 @@ import pandas as pd
 df = pd.read_csv('./db/attendees.csv')
 
 # Create a dictionary containing every entree item so we can store the counts
-meatOrder = {}
+meats = {}
 
 # The wedding is a self-serve bbq, and people can select multiple items, so we need to
 # separate and properly weight each choice
@@ -26,11 +26,11 @@ for index, row in df.iterrows():
 	
 	# Loop through choices and add to dictionary
 	for choice in choices:
-		if meatOrder.has_key(choice):
-			meatOrder[choice] += (1/float(numChoices)) * partySize
+		if meats.has_key(choice):
+			meats[choice] += (1/float(numChoices)) * partySize
 		else: 
-			meatOrder[choice] = (1/float(numChoices)) * partySize
+			meats[choice] = (1/float(numChoices)) * partySize
 
 # Round all the values in meatOrder to two-point precision decimals
-for meat in meatOrder:
-	meatOrder[meat] = float("{0:.1f}".format(meatOrder[meat]))
+for meat in meats:
+	meats[meat] = float("{0:.1f}".format(meats[meat]))
