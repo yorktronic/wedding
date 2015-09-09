@@ -34,3 +34,8 @@ for index, row in df.iterrows():
 # Round all the values in meatOrder to two-point precision decimals
 for meat in meats:
 	meats[meat] = float("{0:.1f}".format(meats[meat]))
+	print meat + ': ' + str(meats[meat])
+
+# Print the meats breakdown and a sum of all meats
+
+print "TOTAL: " + str(sum(meats.values()))
